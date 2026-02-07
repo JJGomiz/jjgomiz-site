@@ -2,196 +2,402 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="JJGomiz · Ingeniería, automatización e instalaciones. Soluciones industriales fiables y mantenibles." />
-  <title>JJGomiz · Ingeniería y Automatización</title>
-  <link rel="stylesheet" href="./styles.css" />
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juan Jesús Gómiz · Automatización e Instalaciones</title>
+  <meta name="description" content="Automatización industrial, instalaciones y tecnología. PLC/SCADA/HMI, BT/RITE/Gas, entornos IT." />
+
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:#0b0f14;
+      color:#e7edf6;
+      line-height:1.45;
+    }
+
+    /* Top bar */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,20,.65);
+      border-bottom:1px solid #1f2a3a;
+    }
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 24px;
+      max-width:1200px;
+      margin:0 auto;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      color:inherit;
+      min-width:180px;
+    }
+    .mark{
+      width:34px;height:34px;border-radius:10px;
+      border:1px solid #243044;
+      background: radial-gradient(120% 120% at 10% 10%, #1a2a44 0%, #0e1522 55%, #0b0f14 100%);
+      display:grid;place-items:center;
+      font-weight:800;
+      letter-spacing:.06em;
+      font-size:12px;
+    }
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
+    .brand-text .name{
+      font-weight:800;
+      font-size:13px;
+      letter-spacing:.06em;
+      opacity:.95;
+    }
+    .brand-text .domain{
+      font-size:12px;
+      opacity:.7;
+      letter-spacing:.12em;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    nav a{
+      color:#dbe6f6;
+      text-decoration:none;
+      padding:8px 10px;
+      border-radius:10px;
+      border:1px solid transparent;
+      font-weight:600;
+      font-size:13px;
+      opacity:.9;
+    }
+    nav a:hover{
+      border-color:#243044;
+      background:#0e1522;
+      opacity:1;
+    }
+
+    /* Hero */
+    header.hero{
+      padding:64px 24px 26px;
+      border-bottom:1px solid #1f2a3a;
+      background:
+        radial-gradient(900px 500px at 15% 15%, rgba(122,184,255,.18), transparent 60%),
+        radial-gradient(700px 450px at 85% 20%, rgba(88, 255, 200,.10), transparent 55%),
+        radial-gradient(900px 650px at 60% 95%, rgba(122,184,255,.10), transparent 60%);
+    }
+    .hero-inner{
+      max-width:1200px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:30px;
+      align-items:start;
+    }
+    @media (max-width: 900px){
+      .hero-inner{ grid-template-columns:1fr; }
+    }
+
+    .kicker{
+      font-size:12px;
+      letter-spacing:.25em;
+      opacity:.7;
+      margin:0 0 12px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:54px;
+      letter-spacing:.2px;
+      line-height:1.05;
+    }
+    @media (max-width: 600px){
+      h1{ font-size:40px; }
+    }
+    .sub{
+      margin:0 0 18px;
+      font-size:18px;
+      color:#a9b7cc;
+    }
+
+    .cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid #243044;
+      background:#0e1522;
+      color:#e7edf6;
+      text-decoration:none;
+      font-weight:800;
+      font-size:14px;
+    }
+    .btn:hover{ background:#121c2e; }
+    .btn.primary{ border-color:#2b5ea8; }
+
+    /* Right side card */
+    .panel{
+      border:1px solid #243044;
+      background:#0e1522;
+      border-radius:18px;
+      padding:18px;
+    }
+    .panel h3{
+      margin:0 0 12px;
+      font-size:14px;
+      letter-spacing:.12em;
+      opacity:.85;
+    }
+    .panel p{
+      margin:0 0 14px;
+      color:#a9b7cc;
+      font-size:14px;
+    }
+    .panel .mini{
+      display:grid;
+      gap:10px;
+    }
+    .mini a{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid #243044;
+      background:#0b0f14;
+      text-decoration:none;
+      color:#dbe6f6;
+      font-weight:700;
+      font-size:14px;
+    }
+    .mini a:hover{ background:#101725; }
+    .badge{
+      font-size:12px;
+      opacity:.7;
+      font-weight:700;
+      margin-left:auto;
+    }
+
+    /* Content */
+    main{
+      max-width:1200px;
+      margin:0 auto;
+      padding:42px 24px 24px;
+    }
+    section{
+      margin-bottom:42px;
+    }
+    h2{
+      margin:0 0 10px;
+      font-size:20px;
+      letter-spacing:.2px;
+    }
+    .lead{
+      margin:0;
+      color:#a9b7cc;
+      font-size:16px;
+      max-width:85ch;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
+    }
+    .chip{
+      padding:12px 16px;
+      border:1px solid #243044;
+      border-radius:14px;
+      background:#0e1522;
+      font-size:14px;
+      color:#dbe6f6;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:14px;
+      margin-top:18px;
+    }
+    @media (max-width: 900px){
+      .grid{ grid-template-columns:1fr; }
+    }
+    .card{
+      border:1px solid #243044;
+      background:#0e1522;
+      border-radius:18px;
+      padding:16px;
+    }
+    .card h3{
+      margin:0 0 6px;
+      font-size:16px;
+    }
+    .card p{
+      margin:0;
+      color:#a9b7cc;
+      font-size:14px;
+    }
+
+    /* Footer */
+    footer{
+      margin-top:24px;
+      border-top:1px solid #1f2a3a;
+      padding:26px 24px;
+      color:#a9b7cc;
+      font-size:13px;
+    }
+    .footer-inner{
+      max-width:1200px;
+      margin:0 auto;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+    }
+    .dot{ opacity:.5; }
+    footer a{ color:#7ab8ff; text-decoration:none; }
+    footer a:hover{ text-decoration:underline; }
+  </style>
 </head>
+
 <body>
-  <header class="topbar">
-    <div class="container topbar__inner">
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="topbar-inner">
       <a class="brand" href="#inicio" aria-label="Ir al inicio">
-        <span class="brand__dot" aria-hidden="true"></span>
-        <span class="brand__text">JJGomiz</span>
+        <div class="mark">JJ</div>
+        <div class="brand-text">
+          <div class="name">JUAN JESÚS GÓMIZ</div>
+          <div class="domain">JJGOMIZ.COM</div>
+        </div>
       </a>
 
-      <nav class="nav">
+      <nav aria-label="Navegación">
         <a href="#servicios">Servicios</a>
-        <a href="#metodo">Método</a>
-        <a href="#contacto" class="btn btn--sm">Contacto</a>
+        <a href="#areas">Áreas</a>
+        <a href="#contacto">Contacto</a>
       </nav>
-
-      <button class="hamburger" type="button" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
     </div>
+  </div>
 
-    <div class="mobile-nav" hidden>
-      <a href="#servicios">Servicios</a>
-      <a href="#metodo">Método</a>
-      <a href="#contacto">Contacto</a>
+  <!-- Hero -->
+  <header class="hero" id="inicio">
+    <div class="hero-inner">
+      <div>
+        <p class="kicker">AUTOMATIZACIÓN · INSTALACIONES · TECNOLOGÍA</p>
+        <h1>Juan Jesús Gómiz</h1>
+        <p class="sub">
+          Soluciones industriales orientadas a fiabilidad, documentación y control:
+          PLC/SCADA/HMI, instalaciones técnicas (BT/RITE/Gas) y entornos IT.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" href="mailto:info@jjgomiz.com?subject=Contacto%20web%20jjgomiz.com">✉️ Contacto general</a>
+          <a class="btn" href="mailto:soporte@jjgomiz.com?subject=Soporte%20web%20jjgomiz.com">🛠️ Soporte</a>
+          <a class="btn" href="tel:+34618315161">📞 Llamar</a>
+        </div>
+      </div>
+
+      <aside class="panel" aria-label="Accesos rápidos">
+        <h3>ACCESO RÁPIDO</h3>
+        <p>Elige el canal adecuado para responder siempre desde el buzón correcto.</p>
+        <div class="mini">
+          <a href="mailto:info@jjgomiz.com?subject=Solicitud%20de%20informaci%C3%B3n%20-%20jjgomiz.com">
+            ✉️ info@jjgomiz.com <span class="badge">General</span>
+          </a>
+          <a href="mailto:soporte@jjgomiz.com?subject=Incidencia%20-%20jjgomiz.com">
+            🛠️ soporte@jjgomiz.com <span class="badge">Soporte</span>
+          </a>
+          <a href="tel:+34618315161">
+            📞 +34 618 315 161 <span class="badge">Móvil</span>
+          </a>
+        </div>
+      </aside>
     </div>
   </header>
 
-  <main id="inicio">
-    <section class="hero">
-      <div class="container hero__grid">
-        <div class="hero__text">
-          <p class="badge">Ingeniería · Automatización · Instalaciones</p>
-          <h1>Soluciones industriales fiables, claras y mantenibles.</h1>
-          <p class="lead">
-            Diseño, puesta en marcha y mejora continua de instalaciones y automatización.
-            Documentación limpia, seguridad eléctrica, y foco en producción.
-          </p>
+  <!-- Content -->
+  <main>
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <p class="lead">
+        Intervenciones y soporte técnico en automatización e instalaciones industriales. Enfoque práctico:
+        diagnóstico rápido, documentación clara y soluciones mantenibles.
+      </p>
 
-          <div class="cta">
-            <a class="btn" href="#contacto">Pedir contacto</a>
-            <a class="btn btn--ghost" href="#servicios">Ver servicios</a>
-          </div>
-
-          <div class="trust">
-            <div class="trust__item">
-              <span class="trust__num">36+</span>
-              <span class="trust__label">años de experiencia</span>
-            </div>
-            <div class="trust__item">
-              <span class="trust__num">Siemens</span>
-              <span class="trust__label">automatización / HMI / SCADA</span>
-            </div>
-            <div class="trust__item">
-              <span class="trust__num">BT · RITE</span>
-              <span class="trust__label">instalaciones y normativa</span>
-            </div>
-          </div>
+      <div class="grid">
+        <div class="card">
+          <h3>Automatización industrial</h3>
+          <p>PLC, SCADA y HMI. Integración, puesta en marcha y mejoras de fiabilidad.</p>
         </div>
-
-        <div class="hero__card">
-          <div class="card">
-            <h2>Qué hago</h2>
-            <ul class="checklist">
-              <li>Automatización de máquinas e integración.</li>
-              <li>Instalaciones eléctricas industriales y cuadros.</li>
-              <li>Diagnóstico, mejoras y reducción de paradas.</li>
-              <li>Documentación, esquemas y puesta en marcha.</li>
-            </ul>
-            <div class="card__footer">
-              <a class="link" href="#contacto">Contactar →</a>
-            </div>
-          </div>
-          <div class="glow" aria-hidden="true"></div>
+        <div class="card">
+          <h3>Instalaciones técnicas</h3>
+          <p>BT, RITE, Gas. Diseño, coordinación, verificación y legalización.</p>
+        </div>
+        <div class="card">
+          <h3>Entornos IT industriales</h3>
+          <p>Git, virtualización, cloud y buenas prácticas para proyectos y mantenimiento.</p>
         </div>
       </div>
     </section>
 
-    <section id="servicios" class="section">
-      <div class="container">
-        <h2 class="section__title">Servicios</h2>
-        <p class="section__subtitle">Lo esencial, sin humo. Orientado a resultados y producción.</p>
+    <section id="areas">
+      <h2>Áreas</h2>
+      <p class="lead">Especialización y herramientas habituales en proyectos industriales.</p>
 
-        <div class="grid">
-          <article class="tile">
-            <h3>Automatización</h3>
-            <p>PLC, HMI/SCADA, señal analógica, comunicaciones industriales, integración con sistemas de planta.</p>
-          </article>
-          <article class="tile">
-            <h3>Instalaciones eléctricas</h3>
-            <p>Cuadros, protecciones, seguridad, pruebas y verificaciones. Enfoque industrial y normativa.</p>
-          </article>
-          <article class="tile">
-            <h3>Mantenimiento y mejora</h3>
-            <p>Diagnóstico de averías, reducción de paradas, mejoras de fiabilidad y mantenibilidad.</p>
-          </article>
-          <article class="tile">
-            <h3>Documentación</h3>
-            <p>Esquemas, lista de señales, procedimientos y entregables claros para operación y mantenimiento.</p>
-          </article>
-        </div>
+      <div class="chips" aria-label="Áreas técnicas">
+        <div class="chip"><strong>PLC / SCADA / HMI</strong> — Siemens TIA Portal · WinCC</div>
+        <div class="chip"><strong>BT / RITE / Gas</strong> — Instalador autorizado</div>
+        <div class="chip"><strong>Entornos IT</strong> — Git · Cloud · Virtualización</div>
+        <div class="chip"><strong>Enfoque</strong> — Fiabilidad · Documentación · Control</div>
       </div>
     </section>
 
-    <section id="metodo" class="section section--alt">
-      <div class="container">
-        <h2 class="section__title">Método de trabajo</h2>
-        <div class="steps">
-          <div class="step">
-            <span class="step__n">1</span>
-            <div>
-              <h3>Entiendo el problema</h3>
-              <p>Objetivo, restricciones y riesgos. Priorizo seguridad y continuidad de producción.</p>
-            </div>
-          </div>
-          <div class="step">
-            <span class="step__n">2</span>
-            <div>
-              <h3>Propongo solución</h3>
-              <p>Plan claro, impacto, tiempos y alternativas. Sin sorpresas.</p>
-            </div>
-          </div>
-          <div class="step">
-            <span class="step__n">3</span>
-            <div>
-              <h3>Ejecuto y documento</h3>
-              <p>Implantación, pruebas, puesta en marcha y documentación mantenible.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p class="lead">
+        Para consultas generales escribe a <a href="mailto:info@jjgomiz.com">info@jjgomiz.com</a>.
+        Para incidencias o soporte técnico utiliza <a href="mailto:soporte@jjgomiz.com">soporte@jjgomiz.com</a>.
+      </p>
     </section>
-
-    <section id="contacto" class="section">
-      <div class="container contact">
-        <div>
-          <h2 class="section__title">Contacto</h2>
-          <p class="section__subtitle">Escríbeme y te respondo en horario laboral.</p>
-
-          <div class="contact__cards">
-            <a class="contact__card" href="mailto:info@jjgomiz.com">
-              <span class="contact__label">Email general</span>
-              <span class="contact__value">info@jjgomiz.com</span>
-            </a>
-            <a class="contact__card" href="mailto:soporte@jjgomiz.com">
-              <span class="contact__label">Soporte</span>
-              <span class="contact__value">soporte@jjgomiz.com</span>
-            </a>
-          </div>
-
-          <p class="tiny">
-            Si prefieres, indica en el correo: empresa, ubicación, y una descripción breve del problema.
-          </p>
-        </div>
-
-        <div class="form card">
-          <h3>Mensaje rápido</h3>
-          <p class="tiny">Esto abre tu cliente de correo (no guardamos datos en la web).</p>
-
-          <form id="mailtoForm">
-            <label>
-              <span>Asunto</span>
-              <input name="subject" type="text" placeholder="Ej. Paradas intermitentes / mejora instalación" required />
-            </label>
-
-            <label>
-              <span>Mensaje</span>
-              <textarea name="body" rows="6" placeholder="Cuéntame el caso, máquina/planta, y urgencia…" required></textarea>
-            </label>
-
-            <button class="btn" type="submit">Enviar por email</button>
-            <p class="tiny tiny--muted">Se enviará a <strong>info@jjgomiz.com</strong>.</p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="container footer__inner">
-        <span>© <span id="year"></span> JJGomiz</span>
-        <span class="sep">·</span>
-        <a class="link" href="#inicio">Arriba</a>
-      </div>
-    </footer>
   </main>
 
-  <script src="./script.js"></script>
+  <footer>
+    <div class="footer-inner">
+      <span>Estado: <strong>ONLINE</strong> (Cloudflare Pages)</span>
+      <span class="dot">·</span>
+      <span><a href="https://jjgomiz.com" target="_blank" rel="noopener">jjgomiz.com</a></span>
+      <span class="dot">·</span>
+      <span><a href="mailto:info@jjgomiz.com">info@jjgomiz.com</a></span>
+      <span class="dot">·</span>
+      <span><a href="mailto:soporte@jjgomiz.com">soporte@jjgomiz.com</a></span>
+      <span class="dot">·</span>
+      <span><a href="tel:+34618315161">+34 618 315 161</a></span>
+    </div>
+  </footer>
 </body>
 </html>
