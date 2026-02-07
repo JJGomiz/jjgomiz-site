@@ -6,6 +6,12 @@
   <title>Juan Jesús Gómiz · Automatización e Instalaciones</title>
   <meta name="description" content="Automatización industrial, instalaciones y tecnología. PLC/SCADA/HMI, BT/RITE/Gas, entornos IT." />
 
+  <!-- Social / WhatsApp preview -->
+  <meta property="og:title" content="Juan Jesús Gómiz · Automatización e Instalaciones" />
+  <meta property="og:description" content="Automatización industrial, instalaciones y tecnología. PLC/SCADA/HMI, BT/RITE/Gas, entornos IT." />
+  <meta property="og:url" content="https://jjgomiz.com" />
+  <meta property="og:type" content="website" />
+
   <style>
     :root { color-scheme: dark; }
     * { box-sizing: border-box; }
@@ -16,6 +22,11 @@
       background:#0b0f14;
       color:#e7edf6;
       line-height:1.45;
+    }
+
+    a:focus-visible, .btn:focus-visible{
+      outline: 2px solid #7ab8ff;
+      outline-offset: 3px;
     }
 
     /* Top bar */
@@ -123,40 +134,15 @@
     }
     h1{
       margin:0 0 10px;
-      font-size:54px;
+      font-size: clamp(38px, 5vw, 54px);
       letter-spacing:.2px;
       line-height:1.05;
     }
-    @media (max-width: 600px){
-      h1{ font-size:40px; }
-    }
     .sub{
-      margin:0 0 18px;
+      margin:0 0 0;
       font-size:18px;
       color:#a9b7cc;
     }
-
-    .cta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:18px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 16px;
-      border-radius:14px;
-      border:1px solid #243044;
-      background:#0e1522;
-      color:#e7edf6;
-      text-decoration:none;
-      font-weight:800;
-      font-size:14px;
-    }
-    .btn:hover{ background:#121c2e; }
-    .btn.primary{ border-color:#2b5ea8; }
 
     /* Right side card */
     .panel{
@@ -314,26 +300,17 @@
           Soluciones industriales orientadas a fiabilidad, documentación y control:
           PLC/SCADA/HMI, instalaciones técnicas (BT/RITE/Gas) y entornos IT.
         </p>
-
-        <div class="cta">
-          <a class="btn primary" href="mailto:info@jjgomiz.com?subject=Contacto%20web%20jjgomiz.com">✉️ Contacto general</a>
-          <a class="btn" href="mailto:soporte@jjgomiz.com?subject=Soporte%20web%20jjgomiz.com">🛠️ Soporte</a>
-          <a class="btn" href="tel:+34618315161">📞 Llamar</a>
-        </div>
       </div>
 
       <aside class="panel" aria-label="Accesos rápidos">
         <h3>ACCESO RÁPIDO</h3>
-        <p>Elige el canal adecuado para responder siempre desde el buzón correcto.</p>
+        <p>Elige el canal adecuado para que podamos responder desde el buzón correcto.</p>
         <div class="mini">
           <a href="mailto:info@jjgomiz.com?subject=Solicitud%20de%20informaci%C3%B3n%20-%20jjgomiz.com">
-            ✉️ info@jjgomiz.com <span class="badge">General</span>
+            ℹ️ info@jjgomiz.com <span class="badge">General</span>
           </a>
           <a href="mailto:soporte@jjgomiz.com?subject=Incidencia%20-%20jjgomiz.com">
             🛠️ soporte@jjgomiz.com <span class="badge">Soporte</span>
-          </a>
-          <a href="tel:+34618315161">
-            📞 +34 618 315 161 <span class="badge">Móvil</span>
           </a>
         </div>
       </aside>
@@ -388,15 +365,13 @@
 
   <footer>
     <div class="footer-inner">
-      <span>Estado: <strong>ONLINE</strong> (Cloudflare Pages)</span>
+      <span>Estado: <strong>ONLINE</strong></span>
       <span class="dot">·</span>
       <span><a href="https://jjgomiz.com" target="_blank" rel="noopener">jjgomiz.com</a></span>
       <span class="dot">·</span>
       <span><a href="mailto:info@jjgomiz.com">info@jjgomiz.com</a></span>
       <span class="dot">·</span>
       <span><a href="mailto:soporte@jjgomiz.com">soporte@jjgomiz.com</a></span>
-      <span class="dot">·</span>
-      <span><a href="tel:+34618315161">+34 618 315 161</a></span>
     </div>
   </footer>
 </body>
