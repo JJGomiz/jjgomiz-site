@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Favicon G">
   <!-- Fondo cuadrado con esquinas redondeadas -->
-  <rect x="0" y="0" width="256" height="256" rx="32" fill="#8fa3bf"></rect>
+  <path fill="#8fa3bf" d="M32 0H224a32 32 0 0 1 32 32V224a32 32 0 0 1-32 32H32A32 32 0 0 1 0 224V32A32 32 0 0 1 32 0Z"/>
+
 
   <!-- Logo original COMPLETO, escalado y centrado -->
   <!-- Original: viewBox 0 0 297 210 -->
