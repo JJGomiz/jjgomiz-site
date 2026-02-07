@@ -1,11 +1,197 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>JJGomiz</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="JJGomiz · Ingeniería, automatización e instalaciones. Soluciones industriales fiables y mantenibles." />
+  <title>JJGomiz · Ingeniería y Automatización</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
 </head>
 <body>
-  <h1>JJGomiz</h1>
-  <p>Web limpia de prueba – Cloudflare Pages</p>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__text">JJGomiz</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#servicios">Servicios</a>
+        <a href="#metodo">Método</a>
+        <a href="#contacto" class="btn btn--sm">Contacto</a>
+      </nav>
+
+      <button class="hamburger" type="button" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-nav" hidden>
+      <a href="#servicios">Servicios</a>
+      <a href="#metodo">Método</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="badge">Ingeniería · Automatización · Instalaciones</p>
+          <h1>Soluciones industriales fiables, claras y mantenibles.</h1>
+          <p class="lead">
+            Diseño, puesta en marcha y mejora continua de instalaciones y automatización.
+            Documentación limpia, seguridad eléctrica, y foco en producción.
+          </p>
+
+          <div class="cta">
+            <a class="btn" href="#contacto">Pedir contacto</a>
+            <a class="btn btn--ghost" href="#servicios">Ver servicios</a>
+          </div>
+
+          <div class="trust">
+            <div class="trust__item">
+              <span class="trust__num">36+</span>
+              <span class="trust__label">años de experiencia</span>
+            </div>
+            <div class="trust__item">
+              <span class="trust__num">Siemens</span>
+              <span class="trust__label">automatización / HMI / SCADA</span>
+            </div>
+            <div class="trust__item">
+              <span class="trust__num">BT · RITE</span>
+              <span class="trust__label">instalaciones y normativa</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__card">
+          <div class="card">
+            <h2>Qué hago</h2>
+            <ul class="checklist">
+              <li>Automatización de máquinas e integración.</li>
+              <li>Instalaciones eléctricas industriales y cuadros.</li>
+              <li>Diagnóstico, mejoras y reducción de paradas.</li>
+              <li>Documentación, esquemas y puesta en marcha.</li>
+            </ul>
+            <div class="card__footer">
+              <a class="link" href="#contacto">Contactar →</a>
+            </div>
+          </div>
+          <div class="glow" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios" class="section">
+      <div class="container">
+        <h2 class="section__title">Servicios</h2>
+        <p class="section__subtitle">Lo esencial, sin humo. Orientado a resultados y producción.</p>
+
+        <div class="grid">
+          <article class="tile">
+            <h3>Automatización</h3>
+            <p>PLC, HMI/SCADA, señal analógica, comunicaciones industriales, integración con sistemas de planta.</p>
+          </article>
+          <article class="tile">
+            <h3>Instalaciones eléctricas</h3>
+            <p>Cuadros, protecciones, seguridad, pruebas y verificaciones. Enfoque industrial y normativa.</p>
+          </article>
+          <article class="tile">
+            <h3>Mantenimiento y mejora</h3>
+            <p>Diagnóstico de averías, reducción de paradas, mejoras de fiabilidad y mantenibilidad.</p>
+          </article>
+          <article class="tile">
+            <h3>Documentación</h3>
+            <p>Esquemas, lista de señales, procedimientos y entregables claros para operación y mantenimiento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="metodo" class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Método de trabajo</h2>
+        <div class="steps">
+          <div class="step">
+            <span class="step__n">1</span>
+            <div>
+              <h3>Entiendo el problema</h3>
+              <p>Objetivo, restricciones y riesgos. Priorizo seguridad y continuidad de producción.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step__n">2</span>
+            <div>
+              <h3>Propongo solución</h3>
+              <p>Plan claro, impacto, tiempos y alternativas. Sin sorpresas.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step__n">3</span>
+            <div>
+              <h3>Ejecuto y documento</h3>
+              <p>Implantación, pruebas, puesta en marcha y documentación mantenible.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <div class="container contact">
+        <div>
+          <h2 class="section__title">Contacto</h2>
+          <p class="section__subtitle">Escríbeme y te respondo en horario laboral.</p>
+
+          <div class="contact__cards">
+            <a class="contact__card" href="mailto:info@jjgomiz.com">
+              <span class="contact__label">Email general</span>
+              <span class="contact__value">info@jjgomiz.com</span>
+            </a>
+            <a class="contact__card" href="mailto:soporte@jjgomiz.com">
+              <span class="contact__label">Soporte</span>
+              <span class="contact__value">soporte@jjgomiz.com</span>
+            </a>
+          </div>
+
+          <p class="tiny">
+            Si prefieres, indica en el correo: empresa, ubicación, y una descripción breve del problema.
+          </p>
+        </div>
+
+        <div class="form card">
+          <h3>Mensaje rápido</h3>
+          <p class="tiny">Esto abre tu cliente de correo (no guardamos datos en la web).</p>
+
+          <form id="mailtoForm">
+            <label>
+              <span>Asunto</span>
+              <input name="subject" type="text" placeholder="Ej. Paradas intermitentes / mejora instalación" required />
+            </label>
+
+            <label>
+              <span>Mensaje</span>
+              <textarea name="body" rows="6" placeholder="Cuéntame el caso, máquina/planta, y urgencia…" required></textarea>
+            </label>
+
+            <button class="btn" type="submit">Enviar por email</button>
+            <p class="tiny tiny--muted">Se enviará a <strong>info@jjgomiz.com</strong>.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <span>© <span id="year"></span> JJGomiz</span>
+        <span class="sep">·</span>
+        <a class="link" href="#inicio">Arriba</a>
+      </div>
+    </footer>
+  </main>
+
+  <script src="./script.js"></script>
 </body>
 </html>
